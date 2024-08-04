@@ -26,7 +26,6 @@ export const Weather = () => {
 
         setInterval(() => {
             obtenirPosition();
-            console.log('coordonnées',coordonnees);
         }, 600000);
 
       useEffect(() => {
