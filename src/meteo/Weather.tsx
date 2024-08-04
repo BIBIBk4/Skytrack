@@ -18,11 +18,15 @@ export const roundToHalf = (num:any) => {
 };
 
 export const Weather = () => {
-    const { coordonnees,setIndex } = useIndex();
+    const { coordonnees,setIndex, obtenirPosition} = useIndex();
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const [currentTime, setCurrentTime] = useState(
         new Date().toLocaleString("fr-FR", { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
       );
+
+      useEffect(() => {
+        obtenirPosition();
+      }, [coordonnees]);
 
       useEffect(() => {
         const interval = setInterval(() => {
