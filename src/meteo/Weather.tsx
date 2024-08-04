@@ -24,9 +24,9 @@ export const Weather = () => {
         new Date().toLocaleString("fr-FR", { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
       );
 
-      useEffect(() => {
-        obtenirPosition();
-      }, [coordonnees]);
+        setInterval(() => {
+            obtenirPosition();
+        }, 6000);
 
       useEffect(() => {
         const interval = setInterval(() => {
