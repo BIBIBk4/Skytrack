@@ -26,7 +26,8 @@ export const Weather = () => {
 
         setInterval(() => {
             obtenirPosition();
-        }, 6000);
+            console.log('coordonnées',coordonnees);
+        }, 600000);
 
       useEffect(() => {
         const interval = setInterval(() => {
@@ -39,7 +40,6 @@ export const Weather = () => {
         const cacheKey = coordonnees ? `${coordonnees.latitude},${coordonnees.longitude}`: '0,0';
     if (cache[cacheKey]){
       setWeatherData(cache[cacheKey]);
-      console.log("Vrai");
     } else {
         try {
             const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
@@ -50,7 +50,6 @@ export const Weather = () => {
                     appid: API_KEY,
                 }
             });
-            console.log("Faux");
             cache[cacheKey] = response.data;
             setTimeout(() => {
                 setWeatherData(response.data);
@@ -70,8 +69,6 @@ export const Weather = () => {
     setInterval(() => {
         getWeather();
       }, 3600000);
-
-    console.log(cache);
 
     return (
 <div className="min-h-screenjustify-center bg-gradient-to-br from-blue-500 to-blue-900 text-white py-10">
