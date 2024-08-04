@@ -64,5 +64,5 @@ export type WeatherData = {
     name: string;
 };
 
-//export const API_KEY = "c6dea39f86ea31dc114f0a4f0eec8fa9";
-export const API_KEY = "32e86d776eb8ce9b9f1863c60ee8f317";
+export const API_KEY = "c6dea39f86ea31dc114f0a4f0eec8fa9";
+//export const API_KEY = "32e86d776eb8ce9b9f1863c60ee8f317";
