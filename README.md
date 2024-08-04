@@ -14,7 +14,6 @@ npm install
 
 ## Utilisation
 npm start
-ou bien via vercel en cliquant sur: https://sky-track.vercel.app/
 
 ## Contraintes
 
